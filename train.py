@@ -15,24 +15,29 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("-s", "--source", help="path to source wav dataset folder")
 parser.add_argument("-t", "--target", help="path to target wav dataset folder")
-
+parser.add_argument("-e", "--epochs", help="epochs to train", type = int, default = 100)
+parser.add_argument("-b", "--batch_size", help="batch size", type = int, default = 32)
+parser.add_argument("-l", "--learning_rate", help="learning rate", type = float, default = 1e-4)
+parser.add_argument("-n", "--n_save", help="save per n epoch", type = int, default = 5)
+parser.add_argument("-r", "--load_path", help="model to restore", default = None)
 args = parser.parse_args()
 
 audio_pth_a = args.source
 audio_pth_b = args.target
+epochs = args.epochs
+batch_size = args.batch_size
+lr = args.learning_rate
+n_save = args.n_save
+restore_path = args.load_path
 
 @tf.function
 def proc(x):
   return tf.image.random_crop(x, size=[hop, 3*shape, 1])
 
-
-epochs = 25
-batch_size = 128
-lr = 0.0001
-n_save = 5
-
-
-agen,acritic,bgen,bcritic,siam, [opt_gena,opt_disca,opt_genb,opt_discb] = get_networks(shape, lr = 0.0001 , load_model=False, path=os.path.join(root_dir))
+if not restore_path:
+    agen,acritic,bgen,bcritic,siam, [opt_gena,opt_disca,opt_genb,opt_discb] = get_networks(shape, lr = lr)
+else:
+    agen,acritic,bgen,bcritic,siam, [opt_gena,opt_disca,opt_genb,opt_discb] = get_networks(shape, lr = lr , load_model=True, path=restore_path)
 
 #American
 awv = audio_array(audio_pth_a)                               #get waveform array from folder containing wav files
@@ -169,7 +174,7 @@ def train_all(a,b):
 def save_end(epoch,gloss,closs,mloss,n_save=3,save_path=root_dir):                 #use custom save_path (i.e. Drive '../content/drive/My Drive/')
   if epoch % n_save == 0:
     print('Saving...')
-    path = f'{save_path}/MELCYCLEGAN-{str(gloss)[:9]}-{str(closs)[:9]}-{str(mloss)[:9]}'
+    path = f'{save_path}/models-{str(gloss)[:9]}-{str(closs)[:9]}-{str(mloss)[:9]}'
     os.mkdir(path)
     agen.save_weights(path+'/agen.h5')
     acritic.save_weights(path+'/acritic.h5')
