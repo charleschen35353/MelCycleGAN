@@ -8,7 +8,7 @@ We adopt Mel freqeuncy spectrum as our training feature, and apply a cycle GAN w
 
 Our project demonstrate a more stable and quick way to perform domain trainsformation in between two domains of audio data.
 
-For more details, please refer to my paper here:
+For more details, please refer to my paper here: [LINK]
 
 ## Configuration
 
