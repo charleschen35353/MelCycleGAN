@@ -28,7 +28,7 @@ If you have a GPU, please also make sure you have right CUDA version installed.
 
 ## Pretrain model
 
-Please download and unzip this fhttps://drive.google.com/drive/folders/13TC3CPbYN44K_5dkq0F07pN7ujouMDU8?usp=sharing
+Please download and unzip this https://drive.google.com/drive/folders/13TC3CPbYN44K_5dkq0F07pN7ujouMDU8?usp=sharing
 
 ## Train
 
