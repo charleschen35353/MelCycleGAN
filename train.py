@@ -10,6 +10,16 @@ from utils import *
 from losses import *
 from models import *
 
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-s", "--source", help="path to source wav dataset folder")
+parser.add_argument("-t", "--target", help="path to target wav dataset folder")
+
+args = parser.parse_args()
+
+audio_pth_a = args.source
+audio_pth_b = args.target
 
 @tf.function
 def proc(x):
@@ -25,18 +35,17 @@ n_save = 5
 agen,acritic,bgen,bcritic,siam, [opt_gena,opt_disca,opt_genb,opt_discb] = get_networks(shape, lr = 0.0001 , load_model=False, path=os.path.join(root_dir))
 
 #American
-awv = audio_array('./dataset/cmu_us_bdl_arctic/wav')                               #get waveform array from folder containing wav files
+awv = audio_array(audio_pth_a)                               #get waveform array from folder containing wav files
 aspec = tospec(awv)                                                                 #get spectrogram array
 adata = splitcut(aspec)                                                             #split spectrogams to fixed length
 #Indian
-bwv = audio_array('./dataset/cmu_us_ksp_arctic/wav')
+bwv = audio_array(audio_pth_b)
 bspec = tospec(bwv)
 bdata = splitcut(bspec)
 
 dsa = tf.data.Dataset.from_tensor_slices(adata).repeat(50).map(proc, num_parallel_calls=tf.data.experimental.AUTOTUNE).shuffle(10000).batch(bs, drop_remainder=True)
 
 dsb = tf.data.Dataset.from_tensor_slices(bdata).repeat(50).map(proc, num_parallel_calls=tf.data.experimental.AUTOTUNE).shuffle(10000).batch(bs, drop_remainder=True)
-
 
 
 @tf.function
@@ -160,7 +169,7 @@ def train_all(a,b):
 def save_end(epoch,gloss,closs,mloss,n_save=3,save_path=root_dir):                 #use custom save_path (i.e. Drive '../content/drive/My Drive/')
   if epoch % n_save == 0:
     print('Saving...')
-    path = f'{save_path}/MELGANVC-{str(gloss)[:9]}-{str(closs)[:9]}-{str(mloss)[:9]}'
+    path = f'{save_path}/MELCYCLEGAN-{str(gloss)[:9]}-{str(closs)[:9]}-{str(mloss)[:9]}'
     os.mkdir(path)
     agen.save_weights(path+'/agen.h5')
     acritic.save_weights(path+'/acritic.h5')
