@@ -10,6 +10,10 @@ Our project demonstrate a more stable and quick way to perform domain trainsform
 
 For more details, please refer to my paper here: [LINK]
 
+## Presentation and Demo:
+
+HERE
+
 ## Configuration
 
 Our project depends on the following:
@@ -52,4 +56,10 @@ for example,
 ```
 python eval.py -m MELGANVC-best -s ./dataset/cmu_us_ksp_arctic/wav/arctic_a0003.wav -t ./dataset/cmu_us_bdl_arctic/wav/arctic_a0003.wav
 ```
+
+# Notebook
+
+We also provide a jupyter notebook to show the entire flow.
+
+
 
