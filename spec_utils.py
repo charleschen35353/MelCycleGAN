@@ -6,7 +6,7 @@
 IEEE/ACM Transactions on Audio, Speech, and Language Processing 23, no. 1 (2014): 46-56.'''
 
 #ORIGINAL CODE FROM https://github.com/yoyololicon/spectrogram-inversion
-
+import tensorflow as tf
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -15,10 +15,13 @@ from torchaudio.transforms import MelScale, Spectrogram
 from glob import glob
 import numpy as np
 import librosa
+from utils import * 
 
-
-torch.set_default_tensor_type('torch.cuda.FloatTensor')
-
+if torch.cuda.is_available():
+    torch.set_default_tensor_type('torch.cuda.FloatTensor')
+else:
+    torch.set_default_tensor_type('torch.FloatTensor')
+    
 specobj = Spectrogram(n_fft=6*hop, win_length=6*hop, hop_length=hop, pad=0, power=2, normalized=True)
 specfunc = specobj.forward
 melobj = MelScale(n_mels=hop, sample_rate=sr, f_min=0.)

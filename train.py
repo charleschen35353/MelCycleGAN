@@ -11,10 +11,18 @@ from losses import *
 from models import *
 
 
+@tf.function
+def proc(x):
+  return tf.image.random_crop(x, size=[hop, 3*shape, 1])
+
+
 epochs = 25
 batch_size = 128
 lr = 0.0001
 n_save = 5
+
+
+agen,acritic,bgen,bcritic,siam, [opt_gena,opt_disca,opt_genb,opt_discb] = get_networks(shape, lr = 0.0001 , load_model=False, path=os.path.join(root_dir))
 
 #American
 awv = audio_array('./dataset/cmu_us_bdl_arctic/wav')                               #get waveform array from folder containing wav files
@@ -30,10 +38,6 @@ dsa = tf.data.Dataset.from_tensor_slices(adata).repeat(50).map(proc, num_paralle
 dsb = tf.data.Dataset.from_tensor_slices(bdata).repeat(50).map(proc, num_parallel_calls=tf.data.experimental.AUTOTUNE).shuffle(10000).batch(bs, drop_remainder=True)
 
 
-
-@tf.function
-def proc(x):
-  return tf.image.random_crop(x, size=[hop, 3*shape, 1])
 
 @tf.function
 def train_all(a,b):

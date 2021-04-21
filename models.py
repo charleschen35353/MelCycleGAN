@@ -3,6 +3,7 @@ from tensorflow.keras.models import Sequential, Model, load_model
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.initializers import TruncatedNormal, he_normal
 from layers import *
+from utils import *
 
 
 #U-NET style architecture

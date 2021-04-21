@@ -1,5 +1,6 @@
 #Adding Spectral Normalization to convolutional layers
 import tensorflow as tf
+import tensorflow.keras.backend as K
 from tensorflow.python.keras.utils import conv_utils
 from tensorflow.python.ops import array_ops
 from tensorflow.python.ops import math_ops
