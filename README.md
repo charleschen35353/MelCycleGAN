@@ -4,9 +4,9 @@
 
 In this project, we adopt the method that is used on MelGan-VC to convert audio from Indian accents to American accents.  
 
-We adopt Mel freqeuncy spectrum as our training feature, and apply a cycle GAN with sharing siamese network to perform domain transformation. 
+MelCycleGAN is based on MelGAN-VC which is proposed by Marco Pasini in 2019. 
 
-Our project demonstrate a more stable and quick way to perform domain trainsformation in between two domains of audio data.
+Our method speed up the training time and make the entire training more stable by adopting a CycleGAN structure with shared Siamese training
 
 For more details, please refer to my paper here: [LINK]
 
