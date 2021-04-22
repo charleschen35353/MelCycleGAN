@@ -32,7 +32,7 @@ If you have a GPU, please also make sure you have right CUDA version installed.
 
 ## Dataset
 
-This project uses the CMU ACTIC dataset, in specific the dataset with Indian English speaker and American English speaker. There are 1132 .wav audio files in each category. Please proceed to http://www.festvox.org/cmu_arctic/ and download and unzip them under the folder dataset.
+This project uses the CMU ACTIC dataset, in specific the dataset with Indian English speaker and American English speaker. There are 1131+1 .wav audio files in each category. Please proceed to http://www.festvox.org/cmu_arctic/ and download and unzip them under the folder dataset.
 
 ## Pretrained model
 
