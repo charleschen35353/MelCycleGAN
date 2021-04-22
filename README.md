@@ -14,6 +14,23 @@ For more details, please refer to my paper here: [LINK]
 
 https://youtu.be/Q1v5FnGqSGs
 
+## Results:
+
+Results can be found in ./results.
+
+For example,
+
+```indian-1.wav``` is the audio in source indian accent.
+```american-1.wav``` is the audio in target american accent.
+```gan-1.wav``` is the converted audio using MelGAN-VC.
+```cycle-1.wav``` is the converted audio using our method MelCycleGAN.
+
+And for quailty evaluation,
+
+```gan_epoch1.wav```is the audio generated from random sample using MelGAN-VC with 1 training epoch.
+
+```cycle_epoch1.wav```is the audio generated from random sample using our MelCycleGAN with 1 training epoch.
+
 ## Configuration
 
 Our project depends on the following:
