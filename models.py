@@ -1,3 +1,6 @@
+'''
+This module uses model definition an structure from MelGAN-VC as library: https://github.com/marcoppasini/MelGAN-VC
+'''
 import tensorflow as tf
 from tensorflow.keras.models import Sequential, Model, load_model
 from tensorflow.keras.optimizers import Adam
@@ -22,6 +25,7 @@ def build_generator(input_shape):
   g6 = ConvSN2DTranspose(1, kernel_size=(h,1), strides=(1,1), kernel_initializer=tf.keras.initializers.he_uniform(), padding='valid', activation='tanh')(g5)
   return Model(inp,g6, name='G')
 
+
 #Siamese Network
 def build_siamese(input_shape):
   h,w,c = input_shape
@@ -45,6 +49,11 @@ def build_critic(input_shape):
   return Model(inp, g4, name='C')
   
 #Load past models from path to resume training or test
+
+'''
+The following code is my (lc3533) original piece modified from https://github.com/marcoppasini/MelGAN-VC
+
+'''
 
 def load(path):
   agen = build_generator((hop,shape,1))

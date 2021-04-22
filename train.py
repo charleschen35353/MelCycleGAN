@@ -1,3 +1,9 @@
+'''
+
+The entire module is my original work(lc3533), while adopting methods provided by https://github.com/marcoppasini/MelGAN-VC
+
+'''
+
 #Training Loop
 #Imports
 import tensorflow as tf

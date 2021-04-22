@@ -1,4 +1,3 @@
-#There seems to be a problem with Tensorflow STFT, so we'll be using pytorch to handle offline mel-spectrogram generation and waveform reconstruction
 #For waveform reconstruction, a gradient-based method is used:
 
 ''' Decorsière, Rémi, Peter L. Søndergaard, Ewen N. MacDonald, and Torsten Dau.
@@ -6,6 +5,7 @@
 IEEE/ACM Transactions on Audio, Speech, and Language Processing 23, no. 1 (2014): 46-56.'''
 
 #ORIGINAL CODE FROM https://github.com/yoyololicon/spectrogram-inversion
+
 import tensorflow as tf
 import torch
 import torch.nn as nn

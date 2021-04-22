@@ -1,3 +1,10 @@
+'''
+
+The entire module is create by me(lc3533), while adopting methods provided by https://github.com/marcoppasini/MelGAN-VC
+
+'''
+
+
 import librosa
 import soundfile as sf
 import os

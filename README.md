@@ -30,36 +30,44 @@ sudo apt-get install libsndfile1
 
 If you have a GPU, please also make sure you have right CUDA version installed.
 
-## Pretrain model
+## Dataset
+
+This project uses the CMU ACTIC dataset, in specific the dataset with Indian English speaker and American English speaker. There are 1132 .wav audio files in each category. Please proceed to http://www.festvox.org/cmu_arctic/ and download and unzip them under the folder dataset.
+
+## Pretrained model
 
 Please download and unzip this https://drive.google.com/drive/folders/13TC3CPbYN44K_5dkq0F07pN7ujouMDU8?usp=sharing
 
-## Train
+## Instructions
+
+We provide a script to run and evaluate our method. To reproduce our expriment, please run 
 
 ```
-python train.py [-s source wav dataset path] [-t target wav dataset path] 
+chmod +x run_all.sh
+run_all.sh 
 ```
 
-for example, 
+### Train
 
 ```
-python train.py -s ./dataset/cmu_us_ksp_arctic/wav/ -t ./dataset/cmu_us_bdl_arctic/wav/
+chmod +x run_train.sh
+./run_train.sh
 ```
 
-## Eval
+### Eval
 
 ```
-python eval.py [-m model folder] [-s source wav path] [-t target wav path]
+chmod +x run_eval.sh
+./run_eval.sh
 ```
 
-for example, 
-```
-python eval.py -m MELGANVC-best -s ./dataset/cmu_us_ksp_arctic/wav/arctic_a0003.wav -t ./dataset/cmu_us_bdl_arctic/wav/arctic_a0003.wav
-```
+You may also tune hyperparameters in the scripts above. 
 
 # Notebook
 
 We also provide a jupyter notebook to show the entire flow.
 
+# Citation
 
+Our code is modified and refactorized from https://github.com/marcoppasini/MelGAN-VC.
 

@@ -1,3 +1,6 @@
+'''
+This module is directly adopted from MelGAN-VC as library: https://github.com/marcoppasini/MelGAN-VC
+'''
 #Adding Spectral Normalization to convolutional layers
 import tensorflow as tf
 import tensorflow.keras.backend as K

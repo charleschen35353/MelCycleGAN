@@ -1,3 +1,6 @@
+'''
+This module is directly adopted from MelGAN-VC as library: https://github.com/marcoppasini/MelGAN-VC
+'''
 import tensorflow as tf
 from utils import *
 
