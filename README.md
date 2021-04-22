@@ -6,7 +6,7 @@ In this project, we adopt the method that is used on MelGan-VC to convert audio 
 
 MelCycleGAN is based on MelGAN-VC which is proposed by Marco Pasini in 2019. 
 
-Our method speed up the training time and make the entire training more stable by adopting a CycleGAN structure with shared Siamese training
+Our method speed up the training time and make the entire training more stable by adopting a CycleGAN structure with shared Siamese training.
 
 For more details, please refer to my paper here: [LINK]
 
