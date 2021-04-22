@@ -65,7 +65,7 @@ You may also tune hyperparameters in the scripts above.
 
 # Notebook
 
-We also provide a jupyter notebook to show the entire flow.
+We also provide a jupyter notebook to let you run on colab if the scripts or environment does not work.
 
 # Citation
 
