@@ -38,18 +38,28 @@ Our project depends on the following:
 ```
 pip install tensorflow==2.4.0
 pip install soundfile
-pip intsall --no-deps torchaudio==0.5.0
+pip install --no-deps torchaudio==0.5.0
 pip install tensorflow-addons
 pip install librosa
 pip install torch==1.8.0+cpu torchvision==0.9.0+cpu torchaudio==0.8.0 -f https://download.pytorch.org/whl/torch_stable.html
 sudo apt-get install libsndfile1
 ```
 
-If you have a GPU, please also make sure you have right CUDA version installed.
+If you have a GPU, please also make sure you have right CUDA version and tf-gpu as well as torch installed.
+
+For example, you may change 
+
+```
+pip install torch==1.8.0+cpu torchvision==0.9.0+cpu torchaudio==0.8.0 -f https://download.pytorch.org/whl/torch_stable.html
+```
+to
+```
+pip install torch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 -f https://download.pytorch.org/whl/torch_stable.html
+```
 
 ## Dataset
 
-This project uses the CMU ACTIC dataset, in specific the dataset with Indian English speaker and American English speaker. There are 1131+1 .wav audio files in each category. Please proceed to http://www.festvox.org/cmu_arctic/ and download and unzip them under the folder dataset.
+This project uses the CMU ARCTIC dataset, in specific the dataset with Indian English speaker and American English speaker. There are 1131+1 .wav audio files in each category. Please proceed to http://www.festvox.org/cmu_arctic/ and download and unzip them under the folder dataset.
 
 ## Pretrained model
 
