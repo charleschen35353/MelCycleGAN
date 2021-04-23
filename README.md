@@ -37,6 +37,14 @@ Our project depends on the following:
 
 ```
 pip install tensorflow==2.4.0
+```
+
+or 
+```
+pip install tensorflow-gpu
+```
+and the following
+```
 pip install soundfile
 pip install --no-deps torchaudio==0.5.0
 pip install tensorflow-addons
@@ -45,10 +53,9 @@ pip install torch==1.8.0+cpu torchvision==0.9.0+cpu torchaudio==0.8.0 -f https:/
 sudo apt-get install libsndfile1
 ```
 
-If you have a GPU, please also make sure you have right CUDA version and tf-gpu as well as torch installed.
+If you are using GPU, please also make sure you have right CUDA version and tf-gpu as well as torch installed.
 
-For example, you may change 
-
+For example, you may change if the following does not work:
 ```
 pip install torch==1.8.0+cpu torchvision==0.9.0+cpu torchaudio==0.8.0 -f https://download.pytorch.org/whl/torch_stable.html
 ```
@@ -71,7 +78,7 @@ We provide a script to run and evaluate our method. To reproduce our expriment, 
 
 ```
 chmod +x run_all.sh
-run_all.sh 
+./run_all.sh 
 ```
 
 ### Train
@@ -88,7 +95,10 @@ chmod +x run_eval.sh
 ./run_eval.sh
 ```
 
+The evaluation results are placed under ```eval```
+
 You may also tune hyperparameters in the scripts above. 
+
 
 # Notebook
 
