@@ -8,11 +8,11 @@ MelCycleGAN is based on MelGAN-VC which is proposed by Marco Pasini in 2019.
 
 Our method speed up the training time and make the entire training more stable by adopting a CycleGAN structure with shared Siamese training.
 
-For more details, please refer to my paper here: [LINK]
+For more details, please refer to my paper [here]()
 
 ## Presentation and Demo:
 
-https://youtu.be/Q1v5FnGqSGs
+Link [here](https://youtu.be/Q1v5FnGqSGs)
 
 ## Results:
 
@@ -70,7 +70,7 @@ This project uses the CMU ARCTIC dataset, in specific the dataset with Indian En
 
 ## Pretrained model
 
-Please download and unzip this https://drive.google.com/drive/folders/13TC3CPbYN44K_5dkq0F07pN7ujouMDU8?usp=sharing
+Please download and unzip this [file](https://drive.google.com/drive/folders/13TC3CPbYN44K_5dkq0F07pN7ujouMDU8?usp=sharing)
 
 ## Instructions
 
