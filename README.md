@@ -95,7 +95,7 @@ chmod +x run_eval.sh
 ./run_eval.sh
 ```
 
-The evaluation results are placed under ```eval```
+The evaluation results are placed under ```eval```.
 
 You may also tune hyperparameters in the scripts above. 
 
