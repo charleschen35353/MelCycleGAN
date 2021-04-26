@@ -8,11 +8,11 @@ MelCycleGAN is based on MelGAN-VC which is proposed by Marco Pasini in 2019.
 
 Our method speed up the training time and make the entire training more stable by adopting a CycleGAN structure with shared Siamese training.
 
-For more details, please refer to my paper here: [LINK]
+For more details, please refer to my paper [here]()
 
 ## Presentation and Demo:
 
-https://youtu.be/Q1v5FnGqSGs
+Link [here](https://youtu.be/Q1v5FnGqSGs)
 
 ## Results:
 
@@ -37,23 +37,40 @@ Our project depends on the following:
 
 ```
 pip install tensorflow==2.4.0
+```
+
+or 
+```
+pip install tensorflow-gpu
+```
+and the following
+```
 pip install soundfile
-pip intsall --no-deps torchaudio==0.5.0
+pip install --no-deps torchaudio==0.5.0
 pip install tensorflow-addons
 pip install librosa
 pip install torch==1.8.0+cpu torchvision==0.9.0+cpu torchaudio==0.8.0 -f https://download.pytorch.org/whl/torch_stable.html
 sudo apt-get install libsndfile1
 ```
 
-If you have a GPU, please also make sure you have right CUDA version installed.
+If you are using GPU, please also make sure you have right CUDA version and tf-gpu as well as torch installed.
+
+For example, you may change if the following does not work:
+```
+pip install torch==1.8.0+cpu torchvision==0.9.0+cpu torchaudio==0.8.0 -f https://download.pytorch.org/whl/torch_stable.html
+```
+to
+```
+pip install torch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 -f https://download.pytorch.org/whl/torch_stable.html
+```
 
 ## Dataset
 
-This project uses the CMU ACTIC dataset, in specific the dataset with Indian English speaker and American English speaker. There are 1131+1 .wav audio files in each category. Please proceed to http://www.festvox.org/cmu_arctic/ and download and unzip them under the folder dataset.
+This project uses the CMU ARCTIC dataset, in specific the dataset with Indian English speaker and American English speaker. There are 1131+1 .wav audio files in each category. Please proceed to http://www.festvox.org/cmu_arctic/ and download and unzip them under the folder dataset.
 
 ## Pretrained model
 
-Please download and unzip this https://drive.google.com/drive/folders/13TC3CPbYN44K_5dkq0F07pN7ujouMDU8?usp=sharing
+Please download and unzip this [file](https://drive.google.com/drive/folders/13TC3CPbYN44K_5dkq0F07pN7ujouMDU8?usp=sharing)
 
 ## Instructions
 
@@ -61,7 +78,7 @@ We provide a script to run and evaluate our method. To reproduce our expriment, 
 
 ```
 chmod +x run_all.sh
-run_all.sh 
+./run_all.sh 
 ```
 
 ### Train
@@ -78,7 +95,10 @@ chmod +x run_eval.sh
 ./run_eval.sh
 ```
 
+The evaluation results are placed under ```eval```.
+
 You may also tune hyperparameters in the scripts above. 
+
 
 # Notebook
 
