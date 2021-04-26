@@ -8,7 +8,7 @@ MelCycleGAN is based on MelGAN-VC which is proposed by Marco Pasini in 2019.
 
 Our method speed up the training time and make the entire training more stable by adopting a CycleGAN structure with shared Siamese training.
 
-For more details, please refer to my paper [here]()
+For more details, please refer to my paper [here](https://github.com/charleschen35353/MelCycleGAN/blob/master/MelCycleGAN.pdf)
 
 ## Presentation and Demo:
 
